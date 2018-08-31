@@ -45,11 +45,9 @@ This function is to find the starting time.
 - initialize the slide window, no_data is used to record the number of consecutive time that there is no common stock IDs for actual and predicted.
 - read the files line by line, for fixed time, load the data into the dictionaries recording the stock IDs and prices in "actual.txt" and "predicted.txt".
 - compute the number of common stock IDs and total differences for this time period, record it as error_info.
-- keep track of the number of consecutive time that do not have data.
 - add error_info to the slide window. Pop out the previously added error_info and update the total price differenced in the slide window.
 - write the average difference in the output file.
-  - if the number of non-data time is more than the length of the slide window, print "NA".
-  - if there is no data, print "0.00".
+  - if there is no data, print "NA".
   - otherwise, calculate the average difference and print it.
 
 
