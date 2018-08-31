@@ -31,16 +31,16 @@ append: [num, error_sum], num denoted the number of stock IDs for the time perio
 string: the line that read from files. This function process the line in the file to a list. The first element of the list is the time, the second element is the stock ID, the third element is the price.
 
 ### average_difference(actual, predicted, window, output)
--open files
--initialize the slide window, no_data is used to record the number of consecutive time that there is no common stock IDs for actual and predicted.
--read the files line by line, for fixed time, load the data into the dictionaries recording the stock IDs and prices in "actual.txt" and "predicted.txt".
--compute the number of common stock IDs and total differences for this time period, record it as error_info.
--keep track of the number of consecutive time that do not have data.
--add error_info to the slide window. Pop out the previously added error_info and update the total price differenced in the slide window.
--write the average difference in the output file.
-  -if the number of non-data time is more than the length of the slide window, print "NA".
-  -if there is no data, print "0.00".
-  -otherwise, calculate the average difference and print it.
+- open files
+- initialize the slide window, no_data is used to record the number of consecutive time that there is no common stock IDs for actual and predicted.
+- read the files line by line, for fixed time, load the data into the dictionaries recording the stock IDs and prices in "actual.txt" and "predicted.txt".
+- compute the number of common stock IDs and total differences for this time period, record it as error_info.
+- keep track of the number of consecutive time that do not have data.
+- add error_info to the slide window. Pop out the previously added error_info and update the total price differenced in the slide window.
+- write the average difference in the output file.
+  - if the number of non-data time is more than the length of the slide window, print "NA".
+  - if there is no data, print "0.00".
+  - otherwise, calculate the average difference and print it.
 
 
 
