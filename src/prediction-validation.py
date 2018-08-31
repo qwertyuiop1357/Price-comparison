@@ -1,7 +1,6 @@
 import sys
 import collections
 
-"import the files"
 actual=sys.argv[2] 
 predicted=sys.argv[3]
 window=sys.argv[1]
