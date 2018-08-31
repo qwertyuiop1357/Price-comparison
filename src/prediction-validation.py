@@ -1,11 +1,6 @@
 import sys
 import collections
 
-actual = sys.argv[2] 
-predicted = sys.argv[3]
-window = sys.argv[1]
-output = sys.argv[4]
-
 def window_length(window):
     """this function reads window.txt to get the length of the slide window"""
     try:
@@ -198,6 +193,10 @@ def average_difference(actual, predicted, window, output):
     predicted.close()
     output.close()
 
+actual = sys.argv[2] 
+predicted = sys.argv[3]
+window = sys.argv[1]
+output = sys.argv[4]
 
 if __name__ == "__main__":
     average_difference(actual, predicted, window, output)
