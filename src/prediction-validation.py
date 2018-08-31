@@ -130,7 +130,7 @@ def average_difference(actual, predicted, window, output):
     length = window_length(window)
     slide_window = collections.deque([[0,0] for i in range(length)], length)
     error_sum = [0,0]
-    no_data = 0
+    
  
     # stop_1 and stop_2 records if searching for certain time ends
     time = first_time
@@ -171,11 +171,7 @@ def average_difference(actual, predicted, window, output):
         # compute the total differences during this time period
         error_info = error(actual_dic, predicted_dic)
         
-        # If no data for the whole slide window, write "NA"
-        if error_info[0] == 0:
-            no_data += 1
-        else:
-            no_data = 0
+
         pop = slide_window.popleft()
         error_sum = update_error(error_sum, pop, error_info)
         slide_window.append(error_info)
@@ -183,18 +179,15 @@ def average_difference(actual, predicted, window, output):
         # write the average differences in the output file
         if time-first_time+1 >= length:
             start_time = time - length + 1
-            if no_data >= length:
-                output.write(str(start_time) + '|' + str(time) + '|' + 'NA' + '\n')
             
-            else:
-                if error_sum[0] == 0:
-                    average = "%.2f" % 0
-                    output.write(str(start_time) + '|' + str(time) + '|' + average + '\n')
+            # If there is no data, write "NA"
+            if error_sum[0] == 0:
+                output.write(str(start_time) + '|' + str(time) + '|' + 'NA' + '\n')
 
-                if error_sum[0] != 0:   
-                    average = error_sum[1] / error_sum[0]
-                    average = "%.2f" % average
-                    output.write(str(start_time) + '|' + str(time) + '|' + average + '\n')
+            if error_sum[0] != 0:   
+                average = error_sum[1] / error_sum[0]
+                average = "%.2f" % average
+                output.write(str(start_time) + '|' + str(time) + '|' + average + '\n')
 
         time += 1
     
