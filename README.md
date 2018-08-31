@@ -13,6 +13,7 @@ The code is composed of six functions: window_length(window), error(actual, pred
 ### error(actual, predicted)
 actual: dictionary, keys: stock ID, values: price.
 - it records the stock IDs and corresponding price in "actual.txt" file for certain time period.
+
 predicted: dictionary, keys: stock ID, values: price
 - it records the stock IDs and corresponding price in "predicted.txt" file for certain time period.
 
