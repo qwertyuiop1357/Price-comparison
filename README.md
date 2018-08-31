@@ -4,7 +4,7 @@
 Given two files, "actual.txt" and "predicted.txt", we want to compute the average price differences for each slide window and print the result in a file called "comparison.txt". The length of the slide window is given in the file "window.txt". In the consideration of memory, we don't read the files in a time, but read them line by line. 
 
 ## Structure of the code
-The code is composed of five functions: window_length(window), error(actual, predicted), update_error(error_info, pop, append),process(string) and average_difference(actual, predicted, window, output).
+The code is composed of six functions: window_length(window), error(actual, predicted), update_error(error_info, pop, append),process(string), find_the_first_time(actual, predicted) and average_difference(actual, predicted, window, output).
 
 ### window_length(window)
 - read the content of "window.txt" file.
@@ -29,6 +29,11 @@ append: [num, error_sum], num denoted the number of stock IDs for the time perio
 
 ### process(string)
 string: the line that read from files. This function process the line in the file to a list. The first element of the list is the time, the second element is the stock ID, the third element is the price.
+
+### find_the_first_time(actual, predicted)
+actual: the "actual.txt" file
+predicted: file "predicted.txt" file
+This function is to find the starting time.
 
 ### average_difference(actual, predicted, window, output)
 - open files
