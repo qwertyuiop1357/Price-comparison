@@ -25,15 +25,19 @@ error_sum: float, denote the total price differences of all the common stock IDs
 error_info: [num, error_sum], 
 num: int, denote the number of stock IDs in the slide window period.
 error_sum: float, denote the total price differences in the slide window period.
+
 pop: [num, error_sum], num denoted the number of stock IDs for the time period that will be removed from the slide window, error_sum is the corresponding total price differences in that time period. It is the previously added element in the slide window and will be popped out.
+
 append: [num, error_sum], num denoted the number of stock IDs for the time period that will be added to the slide window, error_sum is the corresponding total price differences. It is the newly-added element in the slide window.
 
 ### process(string)
 string: the line that read from files. This function process the line in the file to a list. The first element of the list is the time, the second element is the stock ID, the third element is the price.
 
 ### find_the_first_time(actual, predicted)
-actual: the "actual.txt" file
-predicted: file "predicted.txt" file
+actual: the "actual.txt" file.
+
+predicted: file "predicted.txt" file.
+
 This function is to find the starting time.
 
 ### average_difference(actual, predicted, window, output)
