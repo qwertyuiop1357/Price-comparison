@@ -1,7 +1,5 @@
-# Data Engineering Coding Challenge
-
 ## Introduction
-Given two files, "actual.txt" and "predicted.txt", we want to compute the average price differences for each slide window and print the result in a file called "comparison.txt". The length of the slide window is given in the file "window.txt". In the consideration of memory, we don't read the files in a time, but read them line by line. 
+Given two files "actual.txt" and "predicted.txt" which contain the actual and predicted price for certani stocks, we want to compute the average price differences for each slide window and print the result in a file called "comparison.txt". The length of the slide window is given in the file "window.txt". In the consideration of memory, we don't read the files in a time, but read them line by line. 
 
 ## Structure of the code
 The code is composed of six functions: window_length(window), error(actual, predicted), update_error(error_info, pop, append),process(string), find_the_first_time(actual, predicted) and average_difference(actual, predicted, window, output).
